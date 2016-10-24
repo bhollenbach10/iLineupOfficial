@@ -1,0 +1,57 @@
+<html>
+<head>
+ <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+     <style>
+            h1 {color:black; background-color:darkturquoise; font-size:150px}
+            h2 {color:white;}
+            a {color:black; font-size:100px;}
+            h3 {color:white; font-size: 75px}
+            body{background-image: url(http://www.wmagazine.com/wp-content/uploads/2013/06/James-Turrell-Las-Vegas.jpg); }
+            p {color white; font-size:40px}
+            select {font-size: 50px}
+            input {color: blueviolet; background-color: black}
+     </style>
+
+</head>
+
+    <body>
+</div>
+
+
+        <h1 select name="artist"> {{ product.name }}</h1>
+        <h2>{{ product.price }}</h2>
+        <h3>{{ product.category }}</h3>
+        <p>{{ product.description }}</p>
+
+<form action="{% url 'index' %}" method="get">
+
+      <select name="form1">
+  <option value="">Choose their stage!</option>
+  <option value="Headline">Headline</option>
+  <option value="Side Stage 2">Side Stage 2</option>
+  <option value="Side Stage 3">Side Stage 3</option>
+      </select>
+
+    <select name="form2">
+  <option value="">What Day Should They Play?</option>
+  <option value="Day 1">Day 1</option>
+  <option value="Day 2">Day 2</option>
+  <option value="Day 3">Day 3</option>
+
+      </select>
+
+<input name="product_name" value="{{ product.name }}" type="hidden">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+    </body>
+</html>

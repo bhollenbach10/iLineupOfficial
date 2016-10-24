@@ -1,0 +1,6 @@
+Have option select be within <form></form> tag.
+Set the form url/CRUD (post/get)
+Make a forms.py  https://docs.djangoproject.com/en/1.9/topics/forms/ read here
+Make a url for the form submission
+In forms.py handle the model update with given variables (should come in within the requests variable maybe)
+In index.html have conditional handling to only show model value IF it exists

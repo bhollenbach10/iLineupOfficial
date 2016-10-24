@@ -1,0 +1,83 @@
+<html>
+    <head>
+            <title>Create Your Music Festival</title>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+            <!-- Latest compiled and minified JavaScript -->
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>
+
+            h1 {
+                color:black; background-color:deepskyblue; text-transform:uppercase; font-size:50px;}
+            h2 {
+                color:red; font-size:30px;}
+            body {
+                background-color:lightgrey; background-image: url("http://i2.cdn.turner.com/cnnnext/dam/assets/160418163107-nos-alive-music-festival-super-169.jpg")}
+            a {
+                color:white; font-family: bangla MN;background-color:black}
+
+            h4 {color:black; background-color: deepskyblue}
+
+            h8 {color:white}
+
+            button {color: black}
+        </style>
+
+    </head>
+    <body>
+        <h1>
+            <strong>Create your own Festival Line Up</strong>
+<form action="product.html" method="get">
+        </h1>
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            {% for product in category.product_set.all %}
+                {{ product.id }}
+                <a href="{% url 'product' product.id %}">{{ product.name}}</a>
+                {% if product.stage %}
+                    <h3>{{ product.stage }}</h3>
+                {% endif %}
+</form>
+
+            {%  endfor %}
+        {%  endfor %}
+    </body>
+
+
+<div>
+
+
+
+
+
+
+    <h4>THIS IS YOUR FESTIVAL</h4>
+
+
+
+    <h8>
+    {{ prod_name }} {{ form1 }} {{ form2 }}
+
+    </h8>
+
+
+        <form method="get" action="{% url 'index' %}">
+        <button type="submit">Clear</button>
+        </form>
+
+
+        <form method="get" action="{% url 'index' %}">
+        <button type="submit">Submit</button>
+        </form>
+
+
+</div>
+
+
+
+</html>
